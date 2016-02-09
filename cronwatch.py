@@ -2,7 +2,7 @@
 Cron's runner with integrated Sentry monitor
 '''
 
-__version__ = '0.1.1'
+__version__ = '0.2.0'
 
 import os
 import sys
