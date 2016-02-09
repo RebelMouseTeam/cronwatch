@@ -2,7 +2,7 @@
 Cron's runner with integrated Sentry monitor
 '''
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 import os
 import sys
@@ -23,10 +23,10 @@ def args():
 
 
 def main():
-    fname = sys.argv[1]
+    path = os.path.abspath(sys.argv[1])
     try:
         with args():
-            execfile(fname)
+            execfile(path, {'__file__': path})
     except:
         client.captureException()
         raise
