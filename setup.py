@@ -16,7 +16,7 @@ with open('cronwatch.py', 'r') as fd:
 
 setup(
     name='cronwatch',
-    packages=['cronwatch'],
+    scripts=['cronwatch.py'],
     package_data={'': ['LICENSE']},
     version=version,
     description='Cron\'s runner with integrated Sentry monitor',
@@ -26,7 +26,9 @@ setup(
     keywords=['cron'],
     license='MIT',
     platforms='any',
-    install_requires=['Raven>=5.10.0'],
+    install_requires=[
+        'Raven>=5.0',
+    ],
     classifiers=(
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
