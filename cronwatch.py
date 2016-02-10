@@ -1,8 +1,9 @@
+#!/usr/bin/env python2
 '''
 Cron's runner with integrated Sentry monitor
 '''
 
-__version__ = '0.2.1'
+__version__ = '0.2.2'
 
 import os
 import sys
