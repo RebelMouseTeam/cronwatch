@@ -2,17 +2,16 @@
 Cron's runner with integrated Sentry monitor
 '''
 
-__version__ = '0.2.0'
+__version__ = '0.2.1'
 
 import os
 import sys
 import contextlib
 
-if os.getenv('DJANGO_SETTINGS_MODULE'):
-    from raven.contrib.django.raven_compat.models import client
-else:
-    import raven
-    client = raven.Client(dsn=(os.getenv('SENTRY_DSN') or None))
+import raven
+client = raven.Client(
+    dsn=(os.getenv('SENTRY_DSN') or None),
+    transport=raven.transport.http.HTTPTransport)
 
 
 @contextlib.contextmanager
